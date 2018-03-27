@@ -12,11 +12,12 @@ import android.os.Messenger
 import com.facebook.stetho.Stetho
 import com.nano.lottery.base.CrashReportingTree
 import com.nano.lottery.common.DEBUG_APP
-import com.nano.lottery.common.FLAG_LOCAL_MESSENGER
-import com.nano.lottery.common.FLAG_SOCKET_DATA
+import com.nano.lottery.common.FLAG_FLOW_DATA
+import com.nano.lottery.common.FLAG_MESSENGER
 import com.nano.lottery.data.APP_LIFECYCLE
 import com.nano.lottery.data.SOCKET_SERVICE
 import com.nano.lottery.data.SystemRepo
+import com.nano.lottery.service.LocalSocketService
 import com.nano.lottery.service.RemoteSocketService
 import com.pacific.arch.rx.verifyWorkThread
 import com.pacific.arch.views.compact.attachDebug
@@ -45,7 +46,7 @@ class AppInitializer @Inject constructor(private val app: App,
             // If you need to send obj, please use Bundle.
             remoteMessenger = Messenger(service)
             val msg = Message.obtain()
-            msg.what = FLAG_LOCAL_MESSENGER
+            msg.what = FLAG_MESSENGER
             msg.replyTo = messenger
             remoteMessenger.send(msg)
         }
@@ -53,9 +54,10 @@ class AppInitializer @Inject constructor(private val app: App,
 
     fun onAppCreate() {
         DEBUG_APP = BuildConfig.DEBUG
-        inAppProcess = !LeakCanaryInternals.isInServiceProcess(app, RemoteSocketService::class.java)
         attachDebug(app, Runnable {
             verifyWorkThread()
+            inAppProcess = isInServiceProcess()
+
             if (DEBUG_APP) {
                 Stetho.initializeWithDefaults(app)
                 Timber.plant(Timber.DebugTree())
@@ -87,17 +89,22 @@ class AppInitializer @Inject constructor(private val app: App,
     // NOTE: ON_DESTROY will never be dispatched
     @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
     fun onAppLifecycle(owner: LifecycleOwner, event: Lifecycle.Event) {
-        Timber.d("Current event -> %s ", event)
+        Timber.d("Current event -> %s ", owner)
         if (event == Lifecycle.Event.ON_START || event == Lifecycle.Event.ON_STOP) {
             APP_LIFECYCLE.onNext(event)
             return
         }
     }
 
+    private fun isInServiceProcess(): Boolean {
+        return !LeakCanaryInternals.isInServiceProcess(app, RemoteSocketService::class.java)
+                && !LeakCanaryInternals.isInServiceProcess(app, LocalSocketService::class.java)
+    }
+
     class IncomingHandler : Handler() {
         override fun handleMessage(msg: Message?) {
             when (msg!!.what) {
-                FLAG_SOCKET_DATA -> {
+                FLAG_FLOW_DATA -> {
                     SOCKET_SERVICE.onNext(msg.obj.toString())
                 }
                 else -> {

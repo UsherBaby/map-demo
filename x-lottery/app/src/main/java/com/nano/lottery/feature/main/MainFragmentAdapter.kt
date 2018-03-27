@@ -2,7 +2,12 @@ package com.nano.lottery.feature.main
 
 import android.support.v4.app.Fragment
 import com.nano.lottery.R
+import com.nano.lottery.feature.history.HistoryFragment
+import com.nano.lottery.feature.home.HomeFragment
+import com.nano.lottery.feature.me.MeFragment
+import com.nano.lottery.feature.moment.MomentFragment
 import com.nano.lottery.views.FragmentPagerAdapter2
+import java.lang.UnsupportedOperationException
 import javax.inject.Inject
 
 class MainFragmentAdapter @Inject constructor(mainActivity: MainActivity)
@@ -12,16 +17,17 @@ class MainFragmentAdapter @Inject constructor(mainActivity: MainActivity)
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> throw UnsupportedOperationException("Illegal position")
-            1 -> throw UnsupportedOperationException("Illegal position")
-            2 -> throw UnsupportedOperationException("Illegal position")
-            3 -> throw UnsupportedOperationException("Illegal position")
-            4 -> throw UnsupportedOperationException("Illegal position")
-            else -> throw UnsupportedOperationException("Illegal position")
+            0 -> MeFragment.newInstance()
+            1 -> HomeFragment.newInstance()
+            2 -> MomentFragment.newInstance()
+            3 -> HistoryFragment.newInstance()
+            4 -> MeFragment.newInstance()
+            5 -> HomeFragment.newInstance()
+            else -> throw UnsupportedOperationException()
         }
     }
 
     override fun getPageTitle(position: Int) = titles[position]
 
-    override fun getCount() = 5
+    override fun getCount() = 6
 }

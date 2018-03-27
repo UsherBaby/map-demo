@@ -3,8 +3,8 @@ package com.nano.lottery.service
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.*
-import com.nano.lottery.common.FLAG_LOCAL_MESSENGER
-import com.nano.lottery.common.FLAG_SOCKET_DATA
+import com.nano.lottery.common.FLAG_FLOW_DATA
+import com.nano.lottery.common.FLAG_MESSENGER
 import dagger.android.DaggerService
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
@@ -43,7 +43,8 @@ class RemoteSocketService : DaggerService() {
                     bundle.putString("data", it.toString())
                     pushToRemote(bundle)
                 }
-                .subscribe())
+                .subscribe()
+        )
     }
 
     override fun onLowMemory() {
@@ -71,16 +72,16 @@ class RemoteSocketService : DaggerService() {
 
     private fun pushToRemote(data: Parcelable) {
         val msg = Message.obtain()
-        msg.what = FLAG_SOCKET_DATA
+        msg.what = FLAG_FLOW_DATA
         msg.obj = data
         msg.replyTo = messenger
         remoteMessenger.send(msg)
     }
 
-    class IncomingHandler(val service: RemoteSocketService) : Handler() {
+    class IncomingHandler(private val service: RemoteSocketService) : Handler() {
         override fun handleMessage(msg: Message?) {
             when (msg!!.what) {
-                FLAG_LOCAL_MESSENGER -> {
+                FLAG_MESSENGER -> {
                     service.remoteMessenger = msg.replyTo
                 }
                 else -> {

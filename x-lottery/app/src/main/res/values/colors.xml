@@ -17,4 +17,21 @@
     <color name="hk_network">#cd423b</color>
 
     <color name="splash_progress_bar">#F5EA8A</color>
+
+    <color name="tab_text_normal">#838385</color>
+    <color name="tab_text_pressed">#ddbf29</color>
+    <color name="navigation_tab">#171719</color>
+
+    <color name="me_menu_title">#333333</color>
+    <color name="me_menu_desc">#838385</color>
+    <color name="me_menu_divider">#eeeeee</color>
+
+    <color name="me_menu_normal">#ffffff</color>
+    <color name="me_menu_pressed">#eeeeee</color>
+    <color name="me_menu_security_desc">#85d6ab</color>
+    <color name="me_menu_security_level">#ff8000</color>
+    <color name="me_menu_login_normal">#333333</color>
+    <color name="me_menu_login_pressed">#B2B2B2</color>
+    <color name="me_info_text">#333333</color>
+    <color name="me_info_desc">#666666</color>
 </resources>

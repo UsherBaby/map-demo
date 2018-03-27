@@ -26,7 +26,7 @@ ext {
     mockito = "2.16.0"
     truth = "0.39"
 
-    constraint = "1.1.0-beta5"
+    constraint = "1.1.0-beta6"
     lifecycle = "1.1.0"
     room = "1.1.0-alpha3"
     paging = "1.0.0-alpha6"
@@ -44,7 +44,7 @@ ext {
     errorProne = "2.2.0"
     jetAnnotations = "15.0"
     dagger2 = "2.15"
-    autoValue = "1.6rc1"
+    autoValue = "1.6"
 
     dispose = "0.6.1"
     timber = "4.6.0"

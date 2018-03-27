@@ -28,4 +28,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation project(':arch')
+    implementation 'com.github.thepacific:divider:0.0.2'
 }

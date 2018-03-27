@@ -12,10 +12,42 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_sync">同步</string>
     <string name="action_search">搜索</string>
     <string name="action_search_hint">游戏关键字</string>
     <string name="start">立即体验</string>
 
+    <string name="menu_game_history">游戏记录</string>
+    <string name="menu_security">安全中心</string>
+    <string name="menu_account_flow">账户明细</string>
+    <string name="menu_deposit_history">充值记录</string>
+    <string name="menu_share">VIP分享</string>
+    <string name="menu_wallet">钱包管理</string>
+    <string name="menu_msg">消息中心</string>
+    <string name="menu_wiki">意见与反馈</string>
+    <string name="menu_gift">分享礼金</string>
+    <string name="menu_sister">联系客服</string>
+    <string name="menu_about">关于1号</string>
+
+    <string name="menu_game_history_desc">查看所有参与游戏记录</string>
+    <string name="menu_security_desc">保护您的账户安全</string>
+    <string name="menu_account_flow_desc">查看账户资金变动明细</string>
+    <string name="menu_deposit_history_desc">查看所有充值订单</string>
+    <string name="menu_share_desc">赢取现金奖励</string>
+    <string name="menu_wallet_desc">用户账户资金管理</string>
+    <string name="menu_msg_desc">查看历史消息内容</string>
+    <string name="menu_wiki_desc">解答各种问题</string>
+    <string name="menu_gift_desc">查看奖励金额</string>
+    <string name="menu_sister_desc">联系在线客服</string>
+    <string name="menu_about_desc">检测更新版本</string>
+
+    <string name="menu_deposit">充值</string>
+    <string name="menu_withdrawal">提现</string>
+    <string name="common_user">普通用户</string>
+    <string name="go_login">注册/登录</string>
+    <string name="user_account">账号:{account}</string>
+    <string name="user_nickname">昵称:{nickname}</string>
+    <string name="user_id">I    D:{id}</string>
+    <string name="user_verify_code">邀请码:{verify_code}</string>
+    <string name="user_balance_desc">账户余额</string>
 </resources>

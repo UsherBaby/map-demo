@@ -14,8 +14,16 @@ import com.nano.lottery.common.OS_PREFS
 import com.nano.lottery.common.RELEASE_BASE_URL
 import com.nano.lottery.data.SystemDatabase
 import com.nano.lottery.data.WebService
+import com.nano.lottery.feature.film.HistoryViewModel
+import com.nano.lottery.feature.history.HistoryFragment
+import com.nano.lottery.feature.home.HomeFragment
+import com.nano.lottery.feature.home.HomeViewModel
 import com.nano.lottery.feature.main.MainActivity
 import com.nano.lottery.feature.main.MainViewModel
+import com.nano.lottery.feature.me.MeFragment
+import com.nano.lottery.feature.me.MeViewModel
+import com.nano.lottery.feature.moment.MomentFragment
+import com.nano.lottery.feature.moment.MomentViewModel
 import com.nano.lottery.feature.zygote.GuideDialogFragment
 import com.nano.lottery.feature.zygote.SplashActivity
 import com.nano.lottery.feature.zygote.SplashViewModel
@@ -176,16 +184,33 @@ abstract class AppBinder {
     @ViewModelKey(MainViewModel::class)
     abstract fun bindMainViewModel(it: MainViewModel): ViewModel
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(HomeViewModel::class)
+    abstract fun bindHomeViewModel(it: HomeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MomentViewModel::class)
+    abstract fun bindMomentViewModel(it: MomentViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(HistoryViewModel::class)
+    abstract fun bindHistoryViewModel(it: HistoryViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MeViewModel::class)
+    abstract fun bindMeViewModel(it: MeViewModel): ViewModel
+
 
     ////Activity binders
     @ContributesAndroidInjector(modules = [(SplashActivityBinder::class)])
     abstract fun splashActivity(): SplashActivity
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [(MainActivityBinder::class), (MainActivityModule::class)])
     abstract fun mainActivity(): MainActivity
-
-
-    ////Global Fragment and FragmentDialog binders
 
 
     ////Service binders(Everything is like Activity)
@@ -194,10 +219,36 @@ abstract class AppBinder {
 
     @ContributesAndroidInjector
     abstract fun remoteSocketService(): RemoteSocketService
+
+
+    ////Global Fragment and FragmentDialog binders
 }
+
 
 @Module
 abstract class SplashActivityBinder {
     @ContributesAndroidInjector
     abstract fun guideDialogFragment(): GuideDialogFragment
+}
+
+
+@Module
+abstract class MainActivityBinder {
+    @ContributesAndroidInjector
+    abstract fun homeFragment(): HomeFragment
+
+    @ContributesAndroidInjector
+    abstract fun momentFragment(): MomentFragment
+
+    @ContributesAndroidInjector
+    abstract fun historyFragment(): HistoryFragment
+
+    @ContributesAndroidInjector
+    abstract fun mefragment(): MeFragment
+}
+
+@Module
+class MainActivityModule {
+    @Provides
+    fun mainViewModel(mainActivity: MainActivity): MainViewModel = mainActivity.model
 }

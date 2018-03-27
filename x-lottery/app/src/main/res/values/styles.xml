@@ -86,4 +86,75 @@
         <item name="android:textColor">@color/hk_network</item>
     </style>
 
+    <style name="MenuIcon" parent="CommonImage">
+        <item name="android:layout_marginTop">@dimen/menu_icon_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/menu_icon_margin_top</item>
+        <item name="android:layout_marginLeft">@dimen/menu_icon_margin_left</item>
+    </style>
+
+    <style name="MenuTitle" parent="WrapWrap">
+        <item name="android:textColor">@color/me_menu_title</item>
+        <item name="android:layout_marginLeft">@dimen/menu_icon_margin_left</item>
+    </style>
+
+    <style name="MenuDepositTitle" parent="MenuTitle">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MenuDesc" parent="WrapWrap">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_marginTop">@dimen/x_small_margin</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/me_menu_desc</item>
+    </style>
+
+    <style name="MenuDivider">
+        <item name="android:layout_width">0.5dip</item>
+        <item name="android:layout_marginTop">@dimen/menu_icon_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/menu_icon_margin_top</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/me_menu_divider</item>
+    </style>
+
+    <style name="MenuContainer">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/selector_me_menu</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="MenuDepositContainer">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/selector_me_menu</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="CommonImage" parent="WrapWrap">
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="SingleLineText">
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MenuInfoText" parent="WrapWrap">
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:textColor">@color/me_info_desc</item>
+    </style>
+
+    <style name="BalanceText" parent="WrapWrap">
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
 </resources>

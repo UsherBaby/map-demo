@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_height"
+        android:orientation="horizontal">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layout_left"
+            style="@style/MenuContainer">
+
+            <ImageView
+                android:id="@+id/img_left"
+                style="@style/MenuIcon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_title_left"
+                style="@style/MenuTitle"
+                app:layout_constraintBottom_toTopOf="@+id/txt_desc_left"
+                app:layout_constraintLeft_toRightOf="@+id/img_left"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/txt_desc_left"
+                style="@style/MenuDesc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_title_left"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title_left" />
+
+            <ImageView
+                android:id="@+id/img_notify_left"
+                style="@style/WrapWrap"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_title_left"
+                app:layout_constraintLeft_toRightOf="@+id/txt_title_left"
+                app:layout_constraintTop_toTopOf="@+id/txt_title_left" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider_vertical"
+            style="@style/MenuDivider" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layout_right"
+            style="@style/MenuContainer">
+
+            <ImageView
+                android:id="@+id/img_right"
+                style="@style/MenuIcon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_title_right"
+                style="@style/MenuTitle"
+                app:layout_constraintBottom_toTopOf="@+id/txt_desc_right"
+                app:layout_constraintLeft_toRightOf="@+id/img_right"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/txt_desc_right"
+                style="@style/MenuDesc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_title_right"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title_right" />
+
+            <TextView
+                android:id="@+id/txt_sub_title_right"
+                style="@style/WrapWrap"
+                android:layout_marginLeft="@dimen/small_margin"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_title_right"
+                app:layout_constraintLeft_toRightOf="@+id/txt_title_right"
+                app:layout_constraintTop_toTopOf="@+id/txt_title_right" />
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</layout>

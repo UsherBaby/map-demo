@@ -13,5 +13,5 @@ const val DEBUG_BASE_URL = "http://www.google.com/"
 
 const val PRE_VERSION = "pre_version"
 
-const val FLAG_LOCAL_MESSENGER = 1024
-const val FLAG_SOCKET_DATA = 512
+const val FLAG_MESSENGER = 1024
+const val FLAG_FLOW_DATA = 512
