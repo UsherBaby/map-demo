@@ -29,4 +29,5 @@ dependencies {
 
     implementation project(':arch')
     implementation 'com.github.thepacific:divider:0.0.2'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 }

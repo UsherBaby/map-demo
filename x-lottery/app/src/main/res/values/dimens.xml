@@ -30,4 +30,5 @@
     <dimen name="menu_height">74dp</dimen>
     <dimen name="item_me_menu_divider">0.8dp</dimen>
     <dimen name="item_me_menu_divider_x">4dp</dimen>
+    <dimen name="home_game_icon_margin">20dp</dimen>
 </resources>

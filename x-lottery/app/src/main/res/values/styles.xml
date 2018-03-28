@@ -102,7 +102,6 @@
     </style>
 
     <style name="MenuDesc" parent="WrapWrap">
-        <item name="android:scaleType">centerCrop</item>
         <item name="android:layout_marginTop">@dimen/x_small_margin</item>
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/me_menu_desc</item>
@@ -155,6 +154,52 @@
         <item name="android:lines">1</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="GameIcon" parent="CommonImage">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">@dimen/home_game_icon_margin</item>
+    </style>
+
+    <style name="GameTitle" parent="WrapWrap">
+        <item name="android:textColor">@color/me_menu_title</item>
+        <item name="android:layout_marginLeft">@dimen/default_margin</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="GameDesc" parent="WrapWrap">
+        <item name="android:layout_marginTop">@dimen/x_small_margin</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/home_game_desc</item>
+    </style>
+
+    <style name="GameContainer" parent="ConWrap">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/selector_me_menu</item>
+    </style>
+
+    <style name="GameRowLayout" parent="MatchWrap">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+    </style>
+
+    <style name="GameItemButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginLeft">@dimen/default_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/game_item</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#fff001</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="GameItemArrowImage" parent="CommonImage">
+        <item name="android:visibility">gone</item>
+        <item name="android:src">@drawable/img_arrow_up</item>
     </style>
 
 </resources>

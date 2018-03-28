@@ -5,4 +5,5 @@ import com.nano.lottery.base.RxAwareViewModel
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(app: App) : RxAwareViewModel(app) {
+
 }

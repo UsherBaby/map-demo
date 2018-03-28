@@ -50,4 +50,64 @@
     <string name="user_id">I    D:{id}</string>
     <string name="user_verify_code">邀请码:{verify_code}</string>
     <string name="user_balance_desc">账户余额</string>
+
+    <string name="type_instant_lottery">时时彩</string>
+    <string name="code_chong_qing_a">重庆时时彩A盘</string>
+    <string name="code_chong_qing_b">重庆时时彩B盘</string>
+    <string name="code_happy_a">快乐时时彩A盘</string>
+    <string name="code_happy_b">快乐时时彩B盘</string>
+    <string name="code_australia_a">澳洲时时彩A盘</string>
+    <string name="code_australia_b">澳洲时时彩B盘</string>
+
+    <string name="type_5_in_11">11选5</string>
+    <string name="code_guang_dong_5_in_11">广东11选5</string>
+    <string name="code_australia_5_in_11">澳洲11选5</string>
+    <string name="code_shan_dong_5_in_11">山东11选5</string>
+    <string name="code_jiang_xi_5_in_11">江西11选5</string>
+    <string name="code_bei_jing_5_in_11">北京11选5</string>
+    <string name="code_happy_5_in_11">快乐11选5</string>
+
+    <string name="type_quick_3">快三</string>
+    <string name="code_jiang_su_quick_3">江苏快三</string>
+    <string name="code_australia_quick_3">澳洲快三</string>
+    <string name="code_hu_bei_quick_3">湖北快三</string>
+    <string name="code_fu_jian__quick_3">福建快三</string>
+    <string name="code_bei_jing_quick_3">北京快三</string>
+    <string name="code_happy_quick_3">快乐快三</string>
+
+    <string name="type_bei_jing_racing">北京赛车</string>
+    <string name="code_bei_jing_racing_a">北京赛车A盘</string>
+    <string name="code_bei_jing_racing_b">北京赛车B盘</string>
+    <string name="code_bei_jing_racing_c">北京赛车C盘</string>
+
+    <string name="type_happy_quick_ship">快乐快艇</string>
+    <string name="code_happy_quick_ship_a">快乐快艇A盘</string>
+    <string name="code_happy_quick_ship_b">快乐快艇B盘</string>
+
+    <string name="type_f_1">F1赛车</string>
+    <string name="code_australia_f_1_a">澳洲F1A盘</string>
+    <string name="code_australia_f_1_b">澳洲F1B盘</string>
+
+    <string name="type_bei_jing_happy_8">北京快乐8</string>
+    <string name="code_bei_jing_happy_8">北京</string>
+    <string name="code_australia_act_happy_8">澳洲ACT</string>
+
+    <string name="type_niu_niu">牛牛</string>
+
+    <string name="type_hk_lottery">香港彩</string>
+    <string name="code_happy_5_score_hk_lottery">快乐5分</string>
+    <string name="code_australia_165_lottery">澳洲165</string>
+
+    <string name="type_mark_6">香港彩</string>
+    <string name="type_keno">KENO</string>
+    <string name="type_hai_nan_7_star">海南七星彩</string>
+    <string name="type_double_colorful_ball">双色球</string>
+    <string name="type_lottery_3d">福彩3D</string>
+    <string name="type_sequence_3_5">排列3/5</string>
+    <string name="type_chatting">聊天室</string>
+
+    <string name="high_frequency">高频彩</string>
+    <string name="low_frequency">低频彩</string>
+    <string name="nope"></string>
+
 </resources>

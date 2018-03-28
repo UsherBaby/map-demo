@@ -1,148 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/MatchWrap"
-    android:background="@drawable/me_background">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/img_header"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
-        android:src="@drawable/menu_sister"
-        app:layout_constraintBottom_toTopOf="@+id/txt_vip_level"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+    <android.support.constraint.ConstraintLayout
+        style="@style/MatchWrap"
+        android:background="@drawable/me_background">
 
-    <TextView
-        android:id="@+id/txt_vip_level"
-        style="@style/WrapWrap"
-        android:layout_marginTop="@dimen/small_margin"
-        android:layout_marginBottom="@dimen/small_margin"
-        android:background="@drawable/vip_nope"
-        android:drawableRight="@drawable/img_arrow_right_white"
-        android:gravity="center"
-        android:lines="1"
-        android:maxLines="1"
-        android:paddingRight="@dimen/small_margin"
-        android:text="@string/common_user"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/img_header"
-        app:layout_constraintTop_toBottomOf="@+id/img_header" />
+        <ImageView
+            android:id="@+id/img_header"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:src="@drawable/menu_sister"
+            app:layout_constraintBottom_toTopOf="@+id/txt_vip_level"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <ImageView
-        android:id="@+id/img_vip_level"
-        style="@style/CommonImage"
-        android:layout_marginBottom="4dp"
-        android:src="@drawable/vip0"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_vip_level"
-        app:layout_constraintLeft_toLeftOf="@+id/txt_vip_level"
-        app:layout_constraintTop_toTopOf="@+id/txt_vip_level" />
+        <TextView
+            android:id="@+id/txt_vip_level"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:background="@drawable/vip_nope"
+            android:drawableRight="@drawable/img_arrow_right_white"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingRight="@dimen/small_margin"
+            android:text="@string/common_user"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/img_header"
+            app:layout_constraintTop_toBottomOf="@+id/img_header" />
 
-    <TextView
-        android:id="@+id/txt_login"
-        style="@style/SingleLineText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/default_margin"
-        android:clickable="true"
-        android:text="@string/go_login"
-        android:textColor="@color/color_menu_login"
-        android:textSize="16sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintLeft_toRightOf="@+id/img_header"
-        app:layout_constraintRight_toLeftOf="@+id/txt_account"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/img_vip_level"
+            style="@style/CommonImage"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/vip0"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_vip_level"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_vip_level"
+            app:layout_constraintTop_toTopOf="@+id/txt_vip_level" />
 
-    <TextView
-        android:id="@+id/txt_account"
-        style="@style/MenuInfoText"
-        android:layout_marginLeft="@dimen/default_margin"
-        android:text="@string/user_account"
-        app:layout_constraintBottom_toTopOf="@+id/txt_nickname"
-        app:layout_constraintLeft_toRightOf="@+id/txt_login"
-        app:layout_constraintRight_toLeftOf="@+id/img_balance"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <TextView
+            android:id="@+id/txt_login"
+            style="@style/SingleLineText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:clickable="true"
+            android:text="@string/go_login"
+            android:textColor="@color/color_menu_login"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toRightOf="@+id/img_header"
+            app:layout_constraintRight_toLeftOf="@+id/txt_account"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_nickname"
-        style="@style/MenuInfoText"
-        android:text="@string/user_nickname"
-        app:layout_constraintBottom_toTopOf="@+id/txt_id"
-        app:layout_constraintLeft_toLeftOf="@+id/txt_account"
-        app:layout_constraintTop_toBottomOf="@+id/txt_account" />
+        <TextView
+            android:id="@+id/txt_account"
+            style="@style/MenuInfoText"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:text="@string/user_account"
+            app:layout_constraintBottom_toTopOf="@+id/txt_nickname"
+            app:layout_constraintLeft_toRightOf="@+id/txt_login"
+            app:layout_constraintRight_toLeftOf="@+id/img_balance"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <TextView
-        android:id="@+id/txt_id"
-        style="@style/MenuInfoText"
-        android:text="@string/user_id"
-        app:layout_constraintBottom_toTopOf="@+id/txt_verify_code"
-        app:layout_constraintLeft_toLeftOf="@+id/txt_account"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nickname" />
+        <TextView
+            android:id="@+id/txt_nickname"
+            style="@style/MenuInfoText"
+            android:text="@string/user_nickname"
+            app:layout_constraintBottom_toTopOf="@+id/txt_id"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_account"
+            app:layout_constraintTop_toBottomOf="@+id/txt_account" />
 
-    <TextView
-        android:id="@+id/txt_verify_code"
-        style="@style/MenuInfoText"
-        android:text="@string/user_verify_code"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/txt_account"
-        app:layout_constraintTop_toBottomOf="@+id/txt_id" />
+        <TextView
+            android:id="@+id/txt_id"
+            style="@style/MenuInfoText"
+            android:text="@string/user_id"
+            app:layout_constraintBottom_toTopOf="@+id/txt_verify_code"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_account"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nickname" />
 
-    <ImageView
-        android:id="@+id/img_balance"
-        style="@style/CommonImage"
-        android:layout_height="48dp"
-        android:src="@drawable/img_yue"
-        app:layout_constraintLeft_toRightOf="@+id/txt_account"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/img_header"
-        app:layout_goneMarginTop="@dimen/small_margin" />
+        <TextView
+            android:id="@+id/txt_verify_code"
+            style="@style/MenuInfoText"
+            android:text="@string/user_verify_code"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/txt_account"
+            app:layout_constraintTop_toBottomOf="@+id/txt_id" />
 
-    <TextView
-        android:id="@+id/txt_balance_desc"
-        style="@style/WrapWrap"
-        android:layout_marginTop="@dimen/x_small_margin"
-        android:layout_marginRight="@dimen/small_margin"
-        android:text="@string/user_balance_desc"
-        android:textColor="@android:color/white"
-        app:layout_constraintRight_toRightOf="@+id/img_balance"
-        app:layout_constraintTop_toTopOf="@+id/img_balance" />
+        <ImageView
+            android:id="@+id/img_balance"
+            style="@style/CommonImage"
+            android:layout_height="48dp"
+            android:src="@drawable/img_yue"
+            app:layout_constraintLeft_toRightOf="@+id/txt_account"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_header"
+            app:layout_goneMarginTop="@dimen/small_margin" />
 
-    <ProgressBar
-        android:id="@+id/progress_balance"
-        android:layout_width="@dimen/default_margin"
-        android:layout_height="@dimen/default_margin"
-        android:layout_marginRight="@dimen/small_margin"
-        app:layout_constraintRight_toRightOf="@+id/img_balance"
-        app:layout_constraintTop_toBottomOf="@+id/txt_balance_desc" />
+        <TextView
+            android:id="@+id/txt_balance_desc"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/x_small_margin"
+            android:layout_marginRight="@dimen/small_margin"
+            android:text="@string/user_balance_desc"
+            android:textColor="@android:color/white"
+            app:layout_constraintRight_toRightOf="@+id/img_balance"
+            app:layout_constraintTop_toTopOf="@+id/img_balance" />
 
-    <TextView
-        android:id="@+id/txt_balance"
-        style="@style/BalanceText"
-        android:layout_marginRight="@dimen/small_margin"
-        android:text="0.00"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintRight_toLeftOf="@+id/progress_balance"
-        app:layout_constraintTop_toBottomOf="@+id/txt_balance_desc" />
+        <ProgressBar
+            android:id="@+id/progress_balance"
+            android:layout_width="@dimen/default_margin"
+            android:layout_height="@dimen/default_margin"
+            android:layout_marginRight="@dimen/small_margin"
+            android:indeterminateTint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_balance"
+            app:layout_constraintRight_toRightOf="@+id/img_balance"
+            app:layout_constraintTop_toTopOf="@+id/txt_balance" />
 
-    <TextView
-        android:id="@+id/txt_charge_gift"
-        style="@style/BalanceText"
-        android:layout_height="0dp"
-        android:drawableRight="@drawable/charge_gift"
-        android:drawablePadding="@dimen/x_small_margin"
-        android:text="first charge"
-        android:textColor="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_vip_level"
-        app:layout_constraintLeft_toLeftOf="@+id/img_balance"
-        app:layout_constraintRight_toRightOf="@+id/img_balance"
-        app:layout_constraintTop_toTopOf="@+id/txt_vip_level" />
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/txt_balance"
+            style="@style/BalanceText"
+            android:layout_marginRight="@dimen/small_margin"
+            android:text="0.00"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintRight_toLeftOf="@+id/progress_balance"
+            app:layout_constraintTop_toBottomOf="@+id/txt_balance_desc" />
+
+        <TextView
+            android:id="@+id/txt_charge_gift"
+            style="@style/BalanceText"
+            android:layout_height="0dp"
+            android:drawableRight="@drawable/charge_gift"
+            android:drawablePadding="@dimen/x_small_margin"
+            android:text="first charge"
+            android:textColor="@color/primary"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_vip_level"
+            app:layout_constraintLeft_toLeftOf="@+id/img_balance"
+            app:layout_constraintRight_toRightOf="@+id/img_balance"
+            app:layout_constraintTop_toTopOf="@+id/txt_vip_level" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -34,4 +34,6 @@
     <color name="me_menu_login_pressed">#B2B2B2</color>
     <color name="me_info_text">#333333</color>
     <color name="me_info_desc">#666666</color>
+    <color name="home_game_desc">#ababab</color>
+    <color name="home_game_expandable">#f6f3e4</color>
 </resources>

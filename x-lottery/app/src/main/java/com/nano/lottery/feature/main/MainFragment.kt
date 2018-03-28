@@ -43,4 +43,6 @@ abstract class MainFragment : BaseFragment() {
         if (lockLazyLoad) throw UnsupportedOperationException()
         lockLazyLoad = false
     }
+
+    fun isViewCreated() = viewCreated
 }

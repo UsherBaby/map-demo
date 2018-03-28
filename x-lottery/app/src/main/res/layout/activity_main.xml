@@ -7,7 +7,6 @@
         style="@style/MatchMatch"
         tools:context=".feature.main.MainActivity">
 
-
         <android.support.constraint.ConstraintLayout
             style="@style/ConCon"
             app:layout_constraintBottom_toTopOf="@+id/tab_layout"
