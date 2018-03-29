@@ -157,8 +157,8 @@
     </style>
 
     <style name="GameIcon" parent="CommonImage">
-        <item name="android:layout_marginTop">10dp</item>
-        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">@dimen/small_margin</item>
+        <item name="android:layout_marginBottom">@dimen/small_margin</item>
         <item name="android:layout_marginLeft">@dimen/home_game_icon_margin</item>
     </style>
 
@@ -183,6 +183,7 @@
     <style name="GameRowLayout" parent="MatchWrap">
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_marginTop">@dimen/default_margin</item>
+        <item name="android:visibility">gone</item>
     </style>
 
     <style name="GameItemButton">
@@ -197,8 +198,8 @@
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="GameItemArrowImage" parent="CommonImage">
-        <item name="android:visibility">gone</item>
+    <style name="GameItemArrowImage" parent="WrapWrap">
+        <item name="android:visibility">invisible</item>
         <item name="android:src">@drawable/img_arrow_up</item>
     </style>
 

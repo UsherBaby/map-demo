@@ -119,15 +119,34 @@ class HomeGame(private val typeLeft: Int,
         binding.txtTitleRight.setText(rightTitle)
         binding.txtDescRight.setText(rightDesc)
 
-        val clickListener = ClickListener(this, holder, binding)
-        binding.layoutLeft.setOnClickListener(clickListener)
-        binding.layoutRight.setOnClickListener(clickListener)
+        holder.attachOnClickListener(R.id.txt_game_one)
+        holder.attachOnClickListener(R.id.txt_game_two)
+        holder.attachOnClickListener(R.id.txt_game_three)
+        holder.attachOnClickListener(R.id.txt_game_four)
+        holder.attachOnClickListener(R.id.txt_game_five)
+        holder.attachOnClickListener(R.id.txt_game_six)
+        holder.attachOnClickListener(R.id.txt_game_seven)
+        holder.attachOnClickListener(R.id.txt_game_eight)
+        holder.attachOnClickListener(R.id.txt_game_nine)
+
+        val listener = ClickListener(this, holder, binding)
+        binding.layoutLeft.setOnClickListener(listener)
+        binding.layoutRight.setOnClickListener(listener)
     }
 
     class ClickListener(private val item: HomeGame,
                         private val holder: ViewHolder,
                         private val binding: ItemHomeGameBinding) : View.OnClickListener {
+
+        private var previewId = 0
+        private var currentId = 0
         override fun onClick(v: View?) {
+            currentId = v!!.id
+            if (previewId == currentId && binding.expandable.isExpanded) {
+                binding.expandable.collapse()
+                hideArrow()
+                return
+            }
             when (holder.currentPosition) {
                 0 -> {
                     if (v == binding.layoutLeft) {
@@ -148,28 +167,38 @@ class HomeGame(private val typeLeft: Int,
                     if (v == binding.layoutLeft) {
                         normal2Cells(true)
                     } else {
-                        // handle
+                        performGameClick()
                     }
                 }
                 4 -> {
                     if (v == binding.layoutLeft) {
                         normal2Cells(true)
                     } else {
-                        // handle
+                        performGameClick()
                     }
                 }
-                else -> {
-                    // handle
-                }
+                else -> performGameClick()
             }
+            previewId = currentId
+        }
+
+        private fun performGameClick() {
+            if (binding.expandable.isExpanded) {
+                binding.expandable.collapse()
+                hideArrow()
+            }
+            binding.txtGameOne.performClick()
         }
 
         private fun special6Cells() {
-            showArrow(true)
+            if (binding.expandable.isExpanded) {
+                binding.expandable.collapse(false)
+            }
+            toggleExpandLayout(true)
             val views = arrayOf(
                     binding.txtGameOne, binding.txtGameTwo, binding.txtGameFour,
                     binding.txtGameFive, binding.txtGameSeven, binding.txtGameEight,
-                    binding.txtTxtGameThree, binding.txtTxtGameSix, binding.txtTxtGameNine
+                    binding.txtGameThree, binding.txtGameSix, binding.txtGameNine
             )
             (0 until views.size).forEach {
                 if (it < 6) {
@@ -184,10 +213,10 @@ class HomeGame(private val typeLeft: Int,
         }
 
         private fun normal6Cells(isLeft: Boolean) {
-            showArrow(isLeft)
+            toggleExpandLayout(isLeft)
             val views = arrayOf(
-                    binding.txtGameOne, binding.txtGameTwo, binding.txtTxtGameThree,
-                    binding.txtGameFour, binding.txtGameFive, binding.txtTxtGameSix
+                    binding.txtGameOne, binding.txtGameTwo, binding.txtGameThree,
+                    binding.txtGameFour, binding.txtGameFive, binding.txtGameSix
             )
             (0 until views.size).forEach {
                 views[it].visibility = View.VISIBLE
@@ -202,8 +231,8 @@ class HomeGame(private val typeLeft: Int,
         }
 
         private fun normal3Cells(isLeft: Boolean) {
-            showArrow(isLeft)
-            val views = arrayOf(binding.txtGameOne, binding.txtGameTwo, binding.txtTxtGameThree)
+            toggleExpandLayout(isLeft)
+            val views = arrayOf(binding.txtGameOne, binding.txtGameTwo, binding.txtGameThree)
             (0 until views.size).forEach {
                 views[it].visibility = View.VISIBLE
                 views[it].setText(if (isLeft) {
@@ -217,7 +246,7 @@ class HomeGame(private val typeLeft: Int,
         }
 
         private fun normal2Cells(isLeft: Boolean) {
-            showArrow(isLeft)
+            toggleExpandLayout(isLeft)
             val views = arrayOf(binding.txtGameOne, binding.txtGameTwo)
             (0 until views.size).forEach {
                 views[it].visibility = View.VISIBLE
@@ -228,25 +257,36 @@ class HomeGame(private val typeLeft: Int,
                 })
 
             }
-            binding.txtTxtGameThree.visibility = View.INVISIBLE
+            binding.txtGameThree.visibility = View.INVISIBLE
             binding.layoutGameRowTwo.visibility = View.GONE
             binding.layoutGameRowThree.visibility = View.GONE
         }
 
+        private fun toggleExpandLayout(isLeft: Boolean) {
+            if (binding.expandable.isExpanded) {
+                binding.expandable.collapse(false)
+            }
+            binding.expandable.expand()
+            showArrow(isLeft)
+        }
+
         private fun showArrow(isLeft: Boolean) {
-            binding.expandable.toggle()
-            if (!binding.expandable.isExpanded) {
-                binding.imgArrowLeft.visibility = View.GONE
-                binding.imgArrowRight.visibility = View.GONE
-                return
-            }
-            if (isLeft) {
-                binding.imgArrowLeft.visibility = View.VISIBLE
-                binding.imgArrowRight.visibility = View.GONE
-            } else {
-                binding.imgArrowLeft.visibility = View.GONE
-                binding.imgArrowRight.visibility = View.VISIBLE
-            }
+            binding.expandable.postDelayed({
+                if (isLeft) {
+                    binding.imgArrowLeft.visibility = View.VISIBLE
+                    binding.imgArrowRight.visibility = View.INVISIBLE
+                } else {
+                    binding.imgArrowLeft.visibility = View.INVISIBLE
+                    binding.imgArrowRight.visibility = View.VISIBLE
+                }
+            }, 200)
+        }
+
+        private fun hideArrow() {
+            binding.expandable.postDelayed({
+                binding.imgArrowLeft.visibility = View.INVISIBLE
+                binding.imgArrowRight.visibility = View.INVISIBLE
+            }, 200)
         }
     }
 }

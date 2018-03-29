@@ -29,7 +29,7 @@ class HomeFragment : MainFragment() {
         binding.recycler.adapter = adapter
         binding.recycler.layoutManager = LinearLayoutManager(activity)
         binding.recycler.addItemDecoration(RecyclerViewDivider.builder(activity)
-                .color(R.color.divider, R.dimen.item_me_menu_divider)
+                .color(R.color.me_menu_divider, R.dimen.item_me_menu_divider)
                 .hideLastDivider()
                 .build())
         return binding.root
