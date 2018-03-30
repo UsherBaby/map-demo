@@ -12,10 +12,7 @@
         <activity
             android:name=".feature.zygote.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Splash">
-
-        </activity>
-
+            android:theme="@style/Splash"></activity>
         <activity
             android:name=".feature.main.MainActivity"
             android:screenOrientation="portrait">
@@ -29,12 +26,16 @@
 
         <service
             android:name=".service.LocalSocketService"
-            android:exported="false"></service>
-
+            android:exported="false" />
         <service
             android:name=".service.RemoteSocketService"
             android:exported="true"
-            android:process=":socket"></service>
+            android:process=":socket" />
+
+        <activity
+            android:name=".feature.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -11,7 +11,6 @@ import com.nano.lottery.R
 import com.nano.lottery.databinding.DialogGuideBinding
 import com.nano.lottery.di.GlideApp
 import com.nano.lottery.feature.main.MainActivity
-import com.nano.lottery.model.GuideImage
 import com.pacific.adapter.PagerAdapter2
 import com.pacific.arch.presentation.AppCompatDialogFragment
 import com.pacific.arch.presentation.dialogFragmentViewModel
@@ -38,7 +37,7 @@ class GuideDialogFragment : AppCompatDialogFragment(), View.OnClickListener,
         setStyle(STYLE_NO_TITLE, R.style.FullScreenDialogFragment)
         adapter.setImageLoader { imageView, holder ->
             GlideApp.with(this@GuideDialogFragment)
-                    .load(Uri.parse(holder.getItem<GuideImage>().url))
+                    .load(Uri.parse(holder.getItem<Image>().url))
                     .centerCrop()
                     .into(imageView)
         }

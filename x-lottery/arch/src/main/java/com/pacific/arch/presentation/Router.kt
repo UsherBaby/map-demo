@@ -184,6 +184,16 @@ fun start(from: Activity, to: Class<*>, extras: Bundle? = null) {
 }
 
 @JvmOverloads
+fun start2(from: Fragment, to: Class<*>, extras: Bundle? = null) {
+    val intent = Intent()
+    intent.setClass(from.activity, to)
+    if (extras != null) {
+        intent.putExtras(extras)
+    }
+    from.startActivity(intent)
+}
+
+@JvmOverloads
 fun startForResult(from: Activity, to: Class<*>, requestCode: Int, extras: Bundle? = null) {
     val intent = Intent()
     intent.setClass(from, to)

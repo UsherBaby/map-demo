@@ -61,11 +61,11 @@ class MeFragment : MainFragment() {
         super.onViewCreated(view, savedInstanceState)
         if (allowInitialize) {
             allowInitialize = false
-            mainActivity.model.createMenu().subscribe(Consumer {
+            mainActivity.model.createSubject().subscribe(Consumer {
                 adapter.replaceAll(it.toList())
             })
         } else {
-            mainActivity.model.menus.observe(this, Observer {
+            mainActivity.model.subjects.observe(this, Observer {
                 adapter.replaceAll(it!!.toList())
             })
         }

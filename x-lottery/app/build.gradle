@@ -1,5 +1,7 @@
 apply from: "../config/app_module_kotlin.gradle"
 
+
+apply plugin: 'kotlin-android-extensions'
 android {
     defaultConfig {
         applicationId "com.nano.lottery"

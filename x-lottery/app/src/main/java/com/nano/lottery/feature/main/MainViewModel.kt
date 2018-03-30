@@ -5,8 +5,8 @@ import com.nano.lottery.App
 import com.nano.lottery.R
 import com.nano.lottery.base.RxAwareViewModel
 import com.nano.lottery.common.*
-import com.nano.lottery.model.HomeGame
-import com.nano.lottery.model.MeMenu
+import com.nano.lottery.feature.home.Game
+import com.nano.lottery.feature.me.Subject
 import com.pacific.adapter.SimpleRecyclerItem
 import com.pacific.arch.rx.applySingle
 import io.reactivex.Single
@@ -14,7 +14,7 @@ import java.util.*
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(app: App) : RxAwareViewModel(app) {
-    val menus = MutableLiveData<MutableList<SimpleRecyclerItem>>()
+    val subjects = MutableLiveData<MutableList<SimpleRecyclerItem>>()
     val games = MutableLiveData<MutableList<SimpleRecyclerItem>>()
 
     fun createGame(): Single<MutableList<SimpleRecyclerItem>> {
@@ -97,7 +97,7 @@ class MainViewModel @Inject constructor(app: App) : RxAwareViewModel(app) {
             val list: MutableList<SimpleRecyclerItem> = ArrayList()
             (0 until titles.size).filter { it % 2 == 1 }.forEach { it ->
                 val left = it - 1
-                list.add(HomeGame(
+                list.add(Game(
                         types[left],
                         titles[left],
                         descriptions[left],
@@ -115,7 +115,7 @@ class MainViewModel @Inject constructor(app: App) : RxAwareViewModel(app) {
         }.applySingle()
     }
 
-    fun createMenu(): Single<MutableList<SimpleRecyclerItem>> {
+    fun createSubject(): Single<MutableList<SimpleRecyclerItem>> {
         return Single.fromCallable {
             val titles = arrayOf(
                     R.string.menu_game_history, R.string.menu_security,
@@ -145,7 +145,7 @@ class MainViewModel @Inject constructor(app: App) : RxAwareViewModel(app) {
             val list: MutableList<SimpleRecyclerItem> = ArrayList()
             (0 until titles.size).filter { it % 2 == 1 }.forEach { it ->
                 val left = it - 1
-                list.add(MeMenu(
+                list.add(Subject(
                         titles[left],
                         descriptions[left],
                         icons[left],
@@ -154,7 +154,7 @@ class MainViewModel @Inject constructor(app: App) : RxAwareViewModel(app) {
                         icons[it])
                 )
             }
-            list.add(MeMenu(
+            list.add(Subject(
                     R.string.menu_about,
                     R.string.menu_about_desc,
                     R.drawable.menu_about,
@@ -162,7 +162,7 @@ class MainViewModel @Inject constructor(app: App) : RxAwareViewModel(app) {
                     R.string.menu_about_desc,
                     R.drawable.menu_about)
             )
-            menus.postValue(list)
+            subjects.postValue(list)
             return@fromCallable list
         }.applySingle()
     }
